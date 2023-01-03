@@ -15,5 +15,15 @@ def visi_keliamieji():
     # masyvas = list(filter(isleap, range(1900, 2101)))
     return render_template("visikeliamieji.html", isleap=isleap)
 
+@app.route("/arkeliamieji/", methods=['GET', 'POST'])
+def arkeliamieji():
+    if request.method == "GET":
+        return render_template('arkeliamieji_forma.html')
+    if request.method == "POST":
+        metai = int(request.form['metai'])
+        rezultatas = isleap(metai)
+        return render_template('arkeliamieji_atsakymas.html', rezultatas=rezultatas, metai=metai)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

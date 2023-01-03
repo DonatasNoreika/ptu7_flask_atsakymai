@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Patvirtinimas{% endblock %}
+{% block content %}
+{% if rezultatas %}
+<p>{{ metai }} metai yra keliamieji </p>
+{% else %}
+<p>{{ metai }} metai yra nekeliamieji </p>
+{% endif %}
+{% endblock %}
