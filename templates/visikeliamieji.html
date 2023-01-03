@@ -2,7 +2,9 @@
 
 {% block title %}Visi keliamieji{% endblock %}
 {% block content %}
-{% for metai in masyvas %}
+{% for metai in range(1900, 2100) %}
+{% if isleap(metai) %}
 <p>{{ metai }}</p>
+{% endif %}
 {% endfor %}
 {% endblock %}

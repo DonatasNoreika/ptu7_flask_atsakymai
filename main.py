@@ -12,8 +12,8 @@ def penkis_kartus(zodis):
 
 @app.route("/visikeliamieji/")
 def visi_keliamieji():
-    masyvas = list(filter(isleap, range(1900, 2101)))
-    return render_template("visikeliamieji.html", masyvas=masyvas)
+    # masyvas = list(filter(isleap, range(1900, 2101)))
+    return render_template("visikeliamieji.html", isleap=isleap)
 
 if __name__ == "__main__":
     app.run(debug=True)
