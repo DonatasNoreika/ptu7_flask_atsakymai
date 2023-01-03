@@ -12,10 +12,7 @@ def penkis_kartus(zodis):
 
 @app.route("/visikeliamieji/")
 def visi_keliamieji():
-    masyvas = []
-    for metai in range(1900, 2101):
-        if isleap(metai):
-            masyvas.append(metai)
+    masyvas = list(filter(isleap, range(1900, 2101)))
     return render_template("visikeliamieji.html", masyvas=masyvas)
 
 if __name__ == "__main__":
